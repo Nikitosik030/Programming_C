@@ -3,7 +3,7 @@
 int main() {
     char stroka[80];
     printf("vvedite stroky: ");
-    scanf("%s", stroka);
+    scanf("%s", &stroka);
     char *p_str = stroka;
     while(*p_str){
     if(*p_str == 'a'){
@@ -14,6 +14,6 @@ int main() {
     }
     *p_str ++;
     }
-    printf("Polychennya stroka: %s", stroka);
+    printf("Polychennya stroka: %s\n", stroka);
     return 0;
 }
