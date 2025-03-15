@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include "triangl.h"
 
-int is_valid_triangle(double a, double b, double c) {
-    return (a + b > c) && (a + c > b) && (b + c > a);
-}
 
 int main() {
     double a, b, c;
