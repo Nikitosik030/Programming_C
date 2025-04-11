@@ -14,6 +14,7 @@ void sortHumansByYear(human *array, int size) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
             if (array[j].birthYear > array[j + 1].birthYear) {
+                // Swap structures
                 human temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
@@ -24,7 +25,6 @@ void sortHumansByYear(human *array, int size) {
 
 int main() {
     human humans[NUM_HUMANS];
-    human sortedHumans[NUM_HUMANS];
 
     printf("Vvedite dannye o %d lyudyakh (Imya Familiya GodRozhdeniya):\n", NUM_HUMANS);
     for (int i = 0; i < NUM_HUMANS; i++) {
@@ -32,15 +32,13 @@ int main() {
         scanf("%s %s %d", humans[i].firstName, humans[i].lastName, &humans[i].birthYear);
     }
 
-    for (int i = 0; i < NUM_HUMANS; i++) {
-        sortedHumans[i] = humans[i];
-    }
 
-    sortHumansByYear(sortedHumans, NUM_HUMANS);
+    sortHumansByYear(humans, NUM_HUMANS); // Sort directly in humans array
+
 
     printf("\nOtsortirovannye dannye po godu rozhdeniya:\n");
     for (int i = 0; i < NUM_HUMANS; i++) {
-        printf("%s %s %d\n", sortedHumans[i].firstName, sortedHumans[i].lastName, sortedHumans[i].birthYear);
+        printf("%s %s %d\n", humans[i].firstName, humans[i].lastName, humans[i].birthYear);
     }
 
     return 0;
