@@ -9,11 +9,11 @@
 void sozdanie_fayla() {
     FILE *file = fopen(INPUT_FILE, "w");
 
-    fprintf(file, "Иванов Пётр Сергеевич  1975\n");
-    fprintf(file, "Сидоров Николай Андреевич 1981\n");
-    fprintf(file, "Козловский Аркадий Семёнович 1978\n");
-    fprintf(file, "Петрова Анна Викторовна 1985\n");
-    fprintf(file, "Смирнов Алексей Игоревич 1990\n");
+    fprintf(file,"Ivanov Pyotr Sergeevich 1975\n");
+    fprintf(file,"Sidorov Nikolay Andreevich 1981\n");
+    fprintf(file,"Kozlovskiy Arkadiy Semenovich 1978\n");
+    fprintf(file,"Petrova Anna Viktorovna 1985\n");
+    fprintf(file, "Smirnov Aleksey Igorevich 1990\n");
 
     fclose(file);
 }
