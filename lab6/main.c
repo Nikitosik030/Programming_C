@@ -24,9 +24,9 @@ void filtraciya_zapisei() {
     char line[MAX_LINE_LENGTH];
 
     while (fgets(line, sizeof(line), inputFile)) {
-        int year;
-        sscanf(line, "%*s %*s %*s %d", &year);
-        if (year > 1980) {
+        int surname[50];
+        sscanf(line, "%s %*s %*s %*d", &surname);
+        if (surname[0] == 'A') {
             fprintf(outputFile, "%s", line);
         }
     }
