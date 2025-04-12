@@ -32,7 +32,7 @@ int main() {
     }
 
 
-    sortHumansByYear(humans, NUM_HUMANS); // Sort directly in humans array
+    sortHumansByYear(humans, NUM_HUMANS); 
 
 
     printf("\nOtsortirovannye dannye po godu rozhdeniya:\n");
