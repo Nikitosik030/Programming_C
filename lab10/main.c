@@ -9,6 +9,13 @@
         } \
     } \
     _max; })
+#define cred(arr, n) ({ \
+    double _sum = 0; \
+    for (int i = 0; i < (n); i++) { \
+        _sum += (arr)[i]; \
+    } \
+    _sum / (n); })
+
 
 int main() {
     int count;
@@ -21,8 +28,10 @@ int main() {
         scanf("%d", &numbers[i]);
     }
 
+    double cr = cred(numbers, count);
     int max_num = MAX(numbers, count);
     printf("Maksimalnoe chislo: %d\n", max_num);
+    printf("cred-arifm: %.2f\n", cr );
 
     free(numbers);
     return 0;
