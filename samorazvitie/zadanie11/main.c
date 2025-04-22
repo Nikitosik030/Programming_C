@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    printf("Таблица умножения для %d:\n", num);
+    for (int i = 1; i <= 10; i++) {
+        printf("%d * %d = %d\n", num, i, num * i);
+    }
+
+    return 0;
+}
