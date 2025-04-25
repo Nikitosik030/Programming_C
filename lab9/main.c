@@ -35,7 +35,6 @@ int main() {
     printf("Vvedite vyrazhenie: ");
     fgets(input, sizeof(input), stdin);
 
-    // Удаление символа новой строки
     input[strcspn(input, "\n")] = 0;
 
     char modifiedInput[MAX_INPUT_LENGTH * 3];
