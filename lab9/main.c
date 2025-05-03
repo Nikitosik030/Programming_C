@@ -13,7 +13,7 @@ double calculate(char *expression) {
 
     token = strtok(expression, " ");
     while (token != NULL) {
-        if (isdigit(token[0]) || (token[0] == '-' && isdigit(token[1]))) {
+        if (isdigit(token[0])) {
             num = atof(token);
             result += sign * num;
             sign = 1;
