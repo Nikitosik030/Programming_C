@@ -1,1 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int day;
+    int month;
+    int year;
+} Date;
+
+int isLeap(int y) {
+    return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+}
+
+int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+long daysSinceEpoch(Date d) {
+    int y = d.year, m = d.month;
+    long days = d.day;
+    if (m < 3) { y--; m += 10; } else { m -= 2; }
+    days += (306 * m + 5) / 10 + (365 * y) + (y / 4) - (y / 100) + (y / 400);
+    return days;
+}
+
+int main() {
+    Date d1, d2;
+    FILE *f = fopen("input.txt", "r");
+    if (!f) { perror("Ошибка"); return 1; }
+    if (fscanf(f, "%d%d%d%d%d%d", &d1.day, &d1.month, &d1.year, &d2.day, &d2.month, &d2.year) != 6) {
+        fprintf(stderr, "Ошибка чтения\n");
+        return 1;
+    }
+    fclose(f);
+
+    long days1 = daysSinceEpoch(d1);
+    long days2 = daysSinceEpoch(d2);
+    printf("%ld\n", labs(days2 - days1));
+
+    return 0;
+}
 
